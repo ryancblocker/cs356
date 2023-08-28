@@ -21,7 +21,6 @@
   - Repeats the DES algorithm 3 times
   - Average time to crack: 5.8\*10^20 years
 - **AES**
-
   - NIST called for a request for a new algorithm to replace AES in 1997 that would improve efficiency
   - symmetric block cipher
   - 128 bit data and pair it with 128/192/256 bits of data blocks
@@ -55,4 +54,12 @@
   - Normally a separate function
 - You can check that the digest is authentic before decrypting the data
 
-- Plain text -> MAC algorithm -> Hash Code (Digest) -> append to message -> transmit the message -> run through the Mac algorithm and then compare the digest to the original
+### MAC Algorithm Processes
+
+1. Plain text
+2. Run through the MAC algorithm
+3. Get the Hash Code (Digest)
+4. Append the Digest to the Message
+5. Transmit the message + the Digest
+6. Run the Digest through the MAC algorithm and then compare the digest to the original
+7. If authenticated then decrypt the message using the key
