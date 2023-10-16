@@ -165,6 +165,7 @@
     - Intent
       - To infect the system
 - Virus
+
   - It infects programs that already exist and it replicates and goes on to infect other content
   - When attached the virus can do anything the program is allowed to do
   - Compnonents:
@@ -172,7 +173,8 @@
     - 4 Phases: Dormant -> Trigger -> Propagate -> Execute
 
 - Macro Virus
-  - Uses scripting code to infect a variety of systems easily because normally the malicous code is attached to a document. 
+
+  - Uses scripting code to infect a variety of systems easily because normally the malicous code is attached to a document.
 
 - Polymorphic Virus ~ A virus that mutates with every infection
 - Metamorphic Virus ~ A virus that mutates and rewrites itself completely at each iteration a may change behavior and appearance.
@@ -181,4 +183,72 @@
 
 ## Chapter 7: Denial of Service Attacks
 
-- 
+- **What is a Denial of Service Attack**
+
+  - Denial of Service Attack ~ _It is a form of attack on the **availability** of some service_
+  - Some targets of attack could be:
+    - **Network Bandwidth**: Aims to attack an organizations ISP provider and the capacity of their network links connecting a server to the internet
+    - **System Resources**: Attacker aims to overload or crash the network
+    - **Application Resources**: Attacker creates a bunch of valid requests that take up a significant amount of resources that limits the applications ability to respond to requests from other users.
+
+- **Flooding Attacks**: Aim of this attack is to overwhelm the capacity of the network connection to the target organization. The following attack are kinds of requests that are sent to overwhelm the network connection
+
+  - ICMP Flood: Ping flood using ICMP echo packets. Traditionally these packets are used as a diagnostic tool
+  - UDP Flood; Uses UDP packets directed to some port number on the target system
+  - TCP SYN Flood: Sends TCP packets to the target system. Attacker aims to send a large volume of packets over quality system code in each one.
+
+- **Source Address Spoofing**
+
+  - Attackers can forge an IP address via the raw socket interface on the operating systems
+  - Makes attacking systems harder to identify
+
+  - Attacker generates large number of volumes of packets that have the target system as the destination address
+
+- **Distributed DoS Attacks**
+
+  - Use of multiple systems to generate attacks
+  - Attacker uses a flaw in an operating system or in a common application to gain access and installs their program onto it (zombie).
+  - Large collection of such systems under the control of one attacker's control can be created forming a botnet.
+
+- **Reflection Attacks**
+
+  - Attacker sends packets to a known service on the intermediary with a spoofed source address of the actual target system.
+  - When the intermediary responds, the response is sent to the target.
+  - "Reflects" the attack off of the intermediary (reflector)
+  - Goal to generate enough volumes of packets to flood the link to the target system.
+  - To defend against this you must block spoofed source packets
+
+- \*\*DNS Amplification Attacks
+
+  - Use Packets directed at a legitimate DNS server as the intermediary system
+  - Attacker creates a series of requests containing the spoofed source address of the target system
+  - Exploit DNS behavior to convert a small request into a much larger one (amplification)
+  - Target is then flooded with responses
+  - To defend against this you must prevent the use of spoofed source addresses
+
+- **DoS Attack Defenses**
+
+  - **Prevention** (Before)
+
+    - Block Spoofed Source Addresses -> on the routers as close to the source as possible
+    - Use modified TCP Connection Handling code
+    - Cryptographically encode critical information in a cookie that is sent as the severs initial sequence number
+    - Block IP Directed Broadcast
+    - Block suspicious service and combinations
+    - What are some good security practices
+
+      - Just don't click it!
+      - Lock your system if your not using it
+      - Minimal Access Points (Least Privilege)
+      - Use mirrored and replicated servers when high performance and reliability is required.
+
+  - **Detection** (During)
+
+    - Ideally you should have network monitors and IDS to detect and notify abnormal patterns, Anti-spoofing, Directed Broadcast, and Rate Limiting Filters should be implemented.
+
+    1. Identify the type of attack
+    2. Have the ISP trace packet flow back to the source
+    3. Implement a contingency plan
+    4. Update incident response
+
+  - **What is a subnet?** ~ _Portion of the network confined to a hardware entry point_
