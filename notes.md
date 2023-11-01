@@ -252,3 +252,100 @@
     4. Update incident response
 
   - **What is a subnet?** ~ _Portion of the network confined to a hardware entry point_
+
+## Chapter 8: Intrusion Detection (IDS)
+
+- **Classes of Intruders**:
+
+  - Cyber-Criminals: They are after Ransomware, identity theft, info theft, money, corporate espionage, financial credentials, and etc
+  - Activists: Skill level is pretty low and their target can be pretty much anything. If their skill level is low they can go buy a toolkit. Their attacks are normally website defacement, DoS attacks
+  - State-Sponsored Organizations: Groups of hackers sponsored by governments and they have a lot more resources behind them so they can do a lot more damage. The are also known as an APT or an advanced persistent threat. Which means you cant persecute them because they originate outside the country.
+  - Others: hackers, stalkers, anyone with a motivation other than the ones previously listed. This could include "hobby hackers."
+
+- **Skill Levels**:
+
+  - **Apprentice or Novice**: primarily use attack toolkit
+  - **Journeymen**: Hackers with sufficient technical skills to modify extend attack toolkit to look for new vulnerabilities
+  - **Masters**: Can create toolkit, and write new powerful toolkit. A lot of these are employed by the APT's.
+
+- **Examples of intrusion**:
+
+  - Remote root compromise
+  - web server defacement
+  - guessing and cracking passwords
+  - copying databases containing credit card numbers
+  - viewing sensitive data without authorization
+  - running a packet sniffer
+  - distributing a pirated server
+  - using an unsecured modem to access internal network
+  - impersonating an executive to get information
+  - using an unattended workstation
+
+- **Intruder behavior**:
+
+  - Target Acquisition and information gathering
+  - information gathering or system exploit
+  - initial access
+  - maintaining access
+  - privilege escalation
+  - covering tracks
+
+- **Security Intrusion** ~ Unauthorized act of bypassing the security mechanisms of a system
+
+- **Intrusion Detection** ~ a hardware or software that gathers information on the system and make a decision
+
+- **Intrusion Detection System**
+
+  - Host Based IDS: monitors a single host for suspicions activity
+  - Network Based IDS: monitors network traffic and analyzes network, transport, and application protocols to identify suspicion activity
+  - Distributed or hybrid IDS: A combination of both of the previous methods of IDS
+
+- **IDS Requirements**:
+
+  1. Run continually
+  2. impose a minimal overhead
+  3. scale to monitor large numbers of systems
+  4. be fault tolerant
+  5. configured according to system security policies
+  6. provide graceful degradation or service
+  7. resist subversion
+  8. adapt to changes in systems and users
+  9. allow dynamic reconfiguration
+
+- **Analysis Approaches**:
+  - **Anomaly Detection** ~ involves the collection of data relating to the behavior of ligament users over a period of time. (EX. do my job day after day then one day dump the entire system to a USB!)
+    - **Statistical:** analysis of observed data
+    - **knowledge-based:** approach to classification based on a pre-defined set of rules for ligament data access.
+    - **machine-learning:** creates classification model based on observed data
+  - **Signature/Heuristic Detection** ~ Uses a set of known malicious data patterns or attack riles that are compared with current behavior. also known as misuse detection. Can only identify attacks that it knows the patterns of. Could be beaten by a poly or meta-morphic virus.
+    - **Signature-based Detection:** Match a large collection of know patterns of malicious data against data stored on a system or in transit over a network
+    - **Rule-based Detection:** Involves a set of rules for identifying known penetrations that would exploit known weakness
+
+## Chapter 9: Firewalls and Intrusions
+
+- **What is a firewall?**
+- Kinds of Firewalls
+  - Circuit Gateway
+  - Packet Filtering
+  - Stateful inspection
+  - application-level gateway
+
+- **Host-Based IPS (HIPS)**
+  - Capability to be tailored ot a specific platform
+  - Can use anomaly detection techniques to identify attacks
+  - Examples of malicious behavior
+    - Modification of resources
+    - buffer overflow exploits
+    - privilege escalation
+    - access to email contact list
+    - directory traversal
+
+- **Network-based IPS (NIPS)**
+
+- **Digital Immune System**
+
+- **Malware Monitors**
+
+- **Honeypot ~** is a unprotected system that organizations use to identify attackers and it is also used to distract the hackers from attacking the systems of value.
+
+- **DMZ ~** Hosts that must have outward facing capability
